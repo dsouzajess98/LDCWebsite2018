@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+
+{% block title %}My Profile{% endblock %}
+<h1> {{ name }} </h1>
+{% endblock %}

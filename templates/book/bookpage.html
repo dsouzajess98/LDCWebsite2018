@@ -1,0 +1,326 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="{% static "assets/img/favicon.png" %}">
+    <title>{{ name }}</title>
+    <meta name="description" content="HTML Responsive Template for Tour Agency or Company Based on Twitter Bootstrap 3.x.x" />
+    <meta name="keywords" content="tour package, holiday, hotel, vocation, booking, trip, travel, tourism, tourist" />
+    <meta name="author" content="crenoveative">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Fav and Touch Icons -->
+
+
+    <!-- CSS Plugins -->
+    <link rel="stylesheet" type="text/css" href="{% static "assets/bootstrap/css/bootstrap.min.css"%}" media="screen">
+    <link href="{% static "assets/css/animate.css" %}" rel="stylesheet">
+    <link href="{% static "assets/css/main.css" %}" rel="stylesheet">
+    <link href="{% static "assets/css/component.css" %}" rel="stylesheet">
+
+    <!-- CSS Font Icons -->
+    <!-- CSS Font Icons -->
+    <link rel="stylesheet" href= "{% static "assets/icons/ionicons/css/ionicons.css" %}">
+    <link rel="stylesheet" href= "{% static "assets/icons/font-awesome/css/font-awesome.min.css" %}">
+    <link rel="stylesheet" href="{% static "assets/icons/pe-icon-7-stroke/css/pe-icon-7-stroke.css" %}">
+    <link rel="stylesheet" href= "{% static "assets/icons/simple-line-icons/css/simple-line-icons.css" %}">
+    <link rel="stylesheet" href= "{% static "assets/icons/themify-icons/themify-icons.css" %}">
+    <link rel="stylesheet" href="{% static "assets/icons/rivolicons/style.css" %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,300italic,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+
+    <!-- CSS Custom -->
+    <link href="{% static "assets/css/style.css" %}" rel="stylesheet">
+    <link href="{% static "assets/css/custom2.css" %}" rel="stylesheet">
+    <link href="{% static "assets/css/color-03.css" %}" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+
+
+</head>
+
+<body style="overflow-x:hidden; background-color: black">
+    <!-- <nav class="navbar navbar-transparent">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display ->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="label-info navbar-brand" href="{% url 'index' %}">Home</a>
+      <a class="navbar-brand" href="{% url 'table' %}">Back to Books</a>
+    </div>
+
+        <!-- /.navbar-collapse ->
+  </div><!-- /.container-fluid ->
+</nav> -->
+<nav class="navbar navbar-primary navbar-fixed-top navbar-sticky-function" style="background-color: black; border-bottom: solid white 1px">
+
+            <div class="navbar-top">
+
+                <div class="container">
+
+                    <div class="flex-row flex-align-middle">
+                        <div class="flex-shrink flex-columns">
+                            <a class="headings" href="{% url 'index' %}"><h2 class="headings" style="padding-top: 0">Literary and Debating Club, NITW</h2></a>
+                        </div>
+                        <div class="flex-columns">
+                          <div class="pull-right">
+                                    <a class="headings" href="../../tables"><h2 class="headings" style="padding-top: 0">Back to Books</h2></a>
+                        </div>
+                        </div>
+                        <!-- <div class="flex-columns">
+                            <div class="pull-right">
+
+                                <div class="navbar-mini">
+                                    <ul class="nav navbar-nav" id="responsive-menu">
+                                        <li><a href="">Home</a>
+                                        </li>
+                                        <li><a href="">Raise a Ticket</a>
+
+                                        </li>
+                                        <li><a href="about.html">My Issues</a></li>
+                                        <li><a href="blog.html">My Profile</a>
+                                            <ul>
+                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="blog-single.html">Blog Single</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div> -->
+                    </div>
+
+                </div>
+
+
+
+
+                <div id="slicknav-mobile"></div>
+
+        </nav>
+
+    <div class="clear"></div>
+    <div class="clear"></div>
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1" role="main">
+                    <div class="detail-content-wrapper">
+                        <div id="section-2" class="detail-content">
+                            <div class="detail-item">
+                                <div class="row">
+                                    <!-- <h1 class="col-md-12 data" style="font-size: 20px">Book Title</h1> -->
+                                    <h1 class="col-md-12 data" style="font-size: 40px">{{ name }}</h1>
+                                    <div class="col-sm-8 col-md-8">
+                                        <div class="itinerary-wrapper">
+                                            <div>
+                                                <h4 class="title">Description</h4>
+                                                <div class="intro-item-body">
+                                                    <p class="data">
+                                                        {{ des }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-4 col-sm-8 mb-30">
+                                        <h4 class="title">Details</h4>
+                                        <ul class="list-info no-icon bb-dotted">
+                                            <br>
+                                            <br>
+                                            <li><span class="font600">Author: &nbsp;&nbsp;&nbsp;<span class="info label label-info">{{ author }}</span></span>
+                                            </li
+
+                                            <li class="text-center"> <a href="{% url 'preregister' id %}" class="btn btn-outline-info {% if available == False or not pass %}disabled {% endif %}">Checkout</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="title">Comments</h4>
+                        </div>
+                        <div class="review-content">
+                            <ul class="review-list">
+                                {% for c in comments %}
+                                    <li class="clearfix">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-sm-9 col-lg-offset-1 col-lg-6">
+                                                    <h6 class="review-text"><span class="commenter">{{ c.subscriber.user.username}}</span>  commented:</h6>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <p class="review-date">
+                                                        {{c.time}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="review-text col-sm-9 col-lg-offset-1 col-lg-6">
+                                                    <p>
+                                                        {{c.comment}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </li>
+                             {% endfor %}
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div id="leave-comment" class="detail-content" style="padding-top: 30px">
+
+                        <div class="text-left">
+                            <h4 class="title">Leave Your Review</h4>
+                        </div>
+
+                        <div class="review-form">
+
+                            <form method="POST" action="/book/comment/{{id}}/" enctype="multipart/form-data">
+                            {% csrf_token %}
+                                <div class="row">
+
+                                    <div class="clear"></div>
+
+                                    <div class="col-sm-12 col-md-8">
+
+                                        <div class="form-group">
+                                            <textarea class="form-control form-control-sm" name="commentbox" rows="5" placeholder="Comments"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="clear"></div>
+
+                                    <div class="col-sm-12 col-md-8 mt-10">
+                                        <button action="Submit" class="btn btn-outline-info">Comment</button>
+                                    </div>
+
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="call-to-action">
+
+                        Question? <a href="mailto:ldcnitw@gmail.com" class="btn btn-outline-info">Contact Us</a> or call : &nbsp;&nbsp;&nbsp;<span class="info label label-info">80805 92334</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    </div>
+
+    </div>
+    <footer class="main-footer row">
+      <div class="container" style="padding-bottom: 20px">
+      <div class="col-md-1">
+             <a href="https://www.facebook.com/English-Literary-and-Debating-Club-NITW-257349471142331" style="font-size: 22px; padding: 0 5px">
+                 <i  style="color: white" class="fa fa-facebook-square"></i>
+             </a>
+             <a href="https://theldclounge.wordpress.com" style="font-size: 22px; padding: 0 5px">
+                 <i  style="color: white" class="fa fa-wordpress"></i>
+             </a>
+           </div>
+             <div class="text-center col-md-6">
+             <strong>Copyright &copy; 2016 <a href="{% url 'index' %}">Literary and Debating Club, NITW</a>.</strong> All rights reserved.
+           </div>
+             <div class="col-md-5">
+             <strong class="pull-right">Created with <i class="fa fa-heart heart"></i> and <i class="fa fa-coffee"></i> by <a href="https://bit.do/anmolkulkarni" class="title black">Anmol Kulkarni</a> and <a href="https://bit.do/sreetamdas" class="title black">Sreetam Das</a></strong>
+           </div>
+         </div>
+         </footer>
+    <!-- end Main Wrapper -->
+    <script>
+        /**
+         *  Sidebar Sticky
+         */
+
+        ! function ($) {
+
+            $(function () {
+
+                var $window = $(window)
+                var $body = $(document.body)
+
+                var navHeight = $('.navbar').outerHeight(true) + 50
+
+                $body.scrollspy({
+                    target: '.scrollspy-sidebar',
+                    offset: navHeight
+                })
+
+                $window.on('load', function () {
+                    $body.scrollspy('refresh')
+                })
+
+                $('.scrollspy-container [href=#]').click(function (e) {
+                    e.preventDefault()
+                })
+
+                // back to top
+                setTimeout(function () {
+                    var $sideBar = $('.scrollspy-sidebar')
+
+                    $sideBar.affix({
+                        offset: {
+                            top: function () {
+                                var offsetTop = $sideBar.offset().top
+                                var sideBarMargin = parseInt($sideBar.children(0).css('margin-top'), 10)
+                                var navOuterHeight = $('.scrollspy-nav').height()
+
+                                return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+                            },
+                            bottom: function () {
+                                return (this.bottom = $('.scrollspy-footer').outerHeight(true))
+                            }
+                        }
+                    })
+                }, 100)
+
+            })
+
+        }(window.jQuery)
+    </script>
+
+</body>
+
+</html>

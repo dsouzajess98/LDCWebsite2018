@@ -1,0 +1,244 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Settings @ Book Club</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <link rel="icon" type="image/png" href="{% static "assets/img/favicon.png" %}">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="{% static "dash/bootstrap/css/bootstrap.min.css" %}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="{% static "dash/plugins/jvectormap/jquery-jvectormap-1.2.2.css"%}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static "dash/dist/css/AdminLTE.min.css"%}">
+    <link rel="stylesheet" href="{% static "dash/dist/css/skins/_all-skins.min.css"%}">
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+        <header class="main-header">
+
+            <!-- Logo -->
+
+
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" style="background-color: black">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                  <span class="sr-only">Toggle navigation</span>
+                </a>
+                <a href="#" class="logo" style="background-color: black; width: 70%">
+                    <span class="logo-lg">Book Club <span style="color: darkgrey">by English Literary and Debating Club, NITW</span></span>
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                    <li class="">
+                        <a href="../../accounts/logout" style="font-weight: 800">Sign Out</a>
+                    </li>
+                    <li>
+                      <a href="/" style="font-size: 20px; font-weight: 800; color: white">
+                        <i class="fa fa-home"></i>Home
+                      </a>
+                    </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar" style="background-color: black">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <p></p>
+                    </div>
+                    <div class="pull-left info">
+                        <p>{{ name }}</p>
+                    </div>
+                </div>
+                <!-- search form -->
+
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+
+                    <li class="treeview">
+                        <a href="{% url 'profile' %}">
+                            <i class="fa fa-home"></i>Home
+
+                        </a>
+
+                    </li>
+
+                    <li>
+                        <a href="{% url 'table' %}">
+                            <i class="fa fa-book"></i> <span>Books</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="{% url 'settings' %}">
+                            <i class="fa fa-wrench"></i>Settings
+
+                        </a>
+
+                    </li>
+
+                    <li>
+                        <a href="{% url 'terms' %}">Terms and Conditions</a>
+                    </li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+
+
+
+
+
+
+        <!-- Nav ends -->
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header" style="padding-bottom: 5%">
+        <h1>Books<small>by Book Club</small></h1>
+        <div class="text-center"><a href="{% url 'auth_password_change' %}" class="btn btn-primary btn-lg text-center">Change My Password</a></div>
+
+        <ol class="breadcrumb">
+            <li><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home</a></li>
+            <li class="active">Settings</li>
+        </ol>
+    </section>
+    <div class="container col-md-10 col-md-offset-1">
+        <form method="POST" action="/book/update_settings/" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+
+                <div class="clear"></div>
+
+                <!--                <div class="input-group col-md-4 col-md-offset-4">
+                                            <span class="input-group-addon">First Name
+                                        </span>
+                                            <input class="form-control" placeholder="First Name" id="f_name" maxlength="254" name="f_name" type="text" required>
+                                            </div>
+
+                                            <div class="input-group col-md-4 col-md-offset-4">
+                                            <span class="input-group-addon">Last Name
+                                        </span>
+                                            <input class="form-control" placeholder="Last Name" id="l_name" maxlength="254" name="l_name" type="text" required>
+                                            </div><div class="input-group col-md-4 col-md-offset-4">
+                                            <span class="input-group-addon">Phone Number
+                                        </span>
+                                            <input class="form-control" placeholder="Phone No." id="p_no" maxlength="254" name="p_no" type="text" required>
+                                            </div>
+                                            <div class="input-group col-md-4 col-md-offset-4">
+                                            <span class="input-group-addon">Registration Number
+                                        </span>
+                                            <input class="form-control" placeholder="Registration No." id="regno" maxlength="254" name="regno" type="text" required>
+                                            </div> -->
+                <div class="col-sm-12 col-md-6">
+
+                    <div class="form-group">
+                        <label>First Name :</label><textarea class="form-control form-control-sm" name="f_name" rows="1">{{ user.user.first_name }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name :</label><textarea class="form-control form-control-sm" name="l_name" rows="1">{{ user.user.last_name }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number :</label><textarea class="form-control form-control-sm" name="p_no" rows="1">{{ user.pno }}</textarea>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <label>Registration Number :</label><textarea class="form-control form-control-sm" name="regno" rows="1">{{ user.reg_no }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Hostel :</label><textarea class="form-control form-control-sm" name="hostel" rows="1">{{ user.hostel }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Room Number :</label><textarea class="form-control form-control-sm" name="room" rows="1">{{ user.room }}</textarea>
+                    </div>
+
+                </div>
+                <div class="clear" style="padding-top: 50px"></div>
+
+                <div class="col-sm-12 col-md-12 mt-10 text-center">
+                    <button action="submit" class="btn btn-info">Update Details </button>
+                    <br>
+                    <a href={% url 'profile' %}> Go back to profile </a>
+                </div>
+                {% if messages %}
+                <div class="col-md-12" style="margin-top: 20px">
+                    <div class="alert alert-success alert-dismissible text-center" style="font-weight: 700; font-size: 20px">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h1>{% for message in messages %} {{ message }}  {% endfor %}</h1>
+
+                    </div>
+                  </div>
+                  {% endif %}
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+
+</div>
+</div>
+    <!-- ./wrapper -->
+    <footer class="main-footer row">
+      <div class="col-md-1">
+             <a href="https://www.facebook.com/English-Literary-and-Debating-Club-NITW-257349471142331" style="font-size: 22px; padding: 0 5px">
+                 <i  style="color: black" class="fa fa-facebook-square"></i>
+             </a>
+             <a href="https://theldclounge.wordpress.com" style="font-size: 22px; padding: 0 5px">
+                 <i  style="color: black" class="fa fa-wordpress"></i>
+             </a>
+           </div>
+             <div class="text-center col-md-6">
+             <strong>Copyright &copy; 2016 <a href="{% url 'index' %}">Literary and Debating Club, NITW</a>.</strong> All rights reserved.
+           </div>
+             <div class="col-md-5">
+             <strong class="pull-right">Created with <i class="fa fa-heart heart"></i> and <i class="fa fa-coffee"></i> by <a href="https://bit.do/anmolkulkarni" class="title black">Anmol Kulkarni</a> and <a href="https://bit.do/sreetamdas" class="title black">Sreetam Das</a></strong>
+           </div>
+         </footer>
+    <!-- jQuery 2.2.3 -->
+    <script src="{% static "dash/plugins/jQuery/jquery-2.2.3.min.js"%}"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="{% static "dash/bootstrap/js/bootstrap.min.js"%}"></script>
+    <!-- FastClick -->
+    <script src="{% static "dash/plugins/fastclick/fastclick.js"%}"></script>
+    <!-- AdminLTE App -->
+    <script src="{% static "dash/dist/js/app.min.js"%}"></script>
+    <!-- Sparkline -->
+    <script src="{% static "dash/plugins/sparkline/jquery.sparkline.min.js"%}"></script>
+    <!-- jvectormap -->
+    <script src="{% static "dash/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"%}"></script>
+    <script src="{% static "dash/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"%}"></script>
+    <!-- SlimScroll 1.3.0 -->
+    <script src="{% static "dash/plugins/slimScroll/jquery.slimscroll.min.js"%}"></script>
+    <!-- ChartJS 1.0.1 -->
+    <script src="{% static "dash/plugins/chartjs/Chart.min.js"%}"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="{% static "dash/dist/js/pages/dashboard2.js"%}"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{% static "dash/dist/js/demo.js" %}"></script>
+</body>
+
+</html>
